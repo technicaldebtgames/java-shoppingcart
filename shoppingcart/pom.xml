@@ -63,6 +63,37 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.1</version>
         </dependency>
+
+        <!-- Spring Sec. Dep.s -->
+        <!-- When working with security in spring, get it all set up to prevent having to fight the
+             default settings/password stuff -->
+        <!-- <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-bom</artifactId> --> <!-- might need to be spring-security-config -->
+            <!-- <version>5.3.3.RELEASE</version> --> <!-- version might be wrong, or node might need removed completely -->
+        <!-- </dependency> -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId> <!-- start by typing this value and then loading maven dep's -->
+        </dependency> <!-- right click on the above and select first context action if it stays red after dep load -->
+
+        <!-- adding testing dependency for security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope> <!-- will only run when testing, not in normal build -->
+        </dependency>
+
+        <!-- telling system what kind of security -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2 -->
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>2.3.6.RELEASE</version> <!-- to get this to work I had to open maven, select dependencies, and
+            download dependencies, after a while the maven m popped up and let me reload the dependencies -->
+        </dependency>
+
+
     </dependencies>
 
     <build>
